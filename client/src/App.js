@@ -5,6 +5,18 @@ import './App.css';
 import Signup from './auth/Signup';
 import Login from './auth/Login';
 import Users from './users/Users';
+import styled from 'styled-components';
+
+const ButtonNav = styled.button`
+  background-color: pink;
+  border: none;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+`
 
 function App(props) {
   function logout() {
@@ -16,15 +28,15 @@ function App(props) {
     <div className="App">
       <br></br>
       <header>
-        <NavLink to="/signup"><button>SignUp</button></NavLink>
+        <NavLink to="/signup"><ButtonNav>SignUp</ButtonNav></NavLink>
         &nbsp;|&nbsp;
-        <NavLink to="/login"><button>LogIn</button></NavLink>
+        <NavLink to="/login"><ButtonNav>LogIn</ButtonNav></NavLink>
         &nbsp;|&nbsp;
-        <NavLink to="/users"><button>Users</button></NavLink>
+        <NavLink to="/users"><ButtonNav>Users</ButtonNav></NavLink>
         &nbsp;|&nbsp;
-        <button type="button" onClick={logout}>
+        <ButtonNav type="button" onClick={logout}>
           LogOut
-        </button>
+        </ButtonNav>
       </header>
       <main>
         <Route path="/signup" component={Signup} />

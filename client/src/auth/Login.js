@@ -1,5 +1,29 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const ButtonSubmit = styled.button`
+  background-color: pink;
+  border: none;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+`
+
+const InputField = styled.input`
+  width: 250px;
+  height: 30px;
+  margin-bottom: 15px;
+  background-color:lightblue;
+  border: none;
+  border-radius: 5px;
+  padding: 7px;
+  font-size: 20px;
+  font-weight: bold;
+`
 
 class Login extends React.Component {
   state = {
@@ -14,7 +38,7 @@ class Login extends React.Component {
         <form onSubmit={this.submitForm}>
           <div>
             <label htmlFor="username" />
-            <input
+            <InputField
               id="username"
               placeholder="username"
               onChange={this.handleChange}
@@ -24,7 +48,7 @@ class Login extends React.Component {
           </div>
           <div>
             <label htmlFor="password" />
-            <input
+            <InputField
               id="password"
               placeholder="password"
               onChange={this.handleChange}
@@ -34,7 +58,7 @@ class Login extends React.Component {
           </div>
           <br></br>
           <div>
-            <button type="submit">Submit</button>
+            <ButtonSubmit type="submit">Submit</ButtonSubmit>
           </div>
         </form>
       </>
@@ -45,7 +69,6 @@ class Login extends React.Component {
     const { id, value } = event.target;
 
     this.setState({ [id]: value });
-    console.log(this.state)
   };
 
   submitForm = event => {
